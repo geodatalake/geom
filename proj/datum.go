@@ -3,6 +3,8 @@ package proj
 import (
 	"fmt"
 	"math"
+	"bytes"
+	"encoding/gob"
 )
 
 type datumType int
@@ -26,6 +28,15 @@ type datum struct {
 	a, b, es, ep2 float64
 	nadGrids      string
 }
+
+/*
+type DatumExport struct {
+	Datum_type    datumType
+	Datum_params  []float64
+	A, D, Es, Ep2 float64
+	NadGrids      string
+}
+*/
 
 func (proj *SR) getDatum() *datum {
 	this := new(datum)
@@ -64,6 +75,35 @@ func (proj *SR) getDatum() *datum {
 	}
 	return this
 }
+
+
+func (this *datum) DatumSerialized () ( []byte, error) {
+
+	var exportDatum DatumExport
+
+	exportDatum.A = this.a
+	exportDatum.B = this.b
+	exportDatum.Datum_params = this.datum_params
+	exportDatum.Datum_type = this.datum_type
+	exportDatum.Ep2 = this.ep2
+	exportDatum.Es = this.es
+	exportDatum.NadGrids = this.nadGrids
+
+
+	var datumBytes = bytes.Buffer{}
+	e := gob.NewEncoder(&datumBytes)
+	err := e.Encode( exportDatum )
+
+	if err != nil {
+		fmt.Println(`failed datumgob Encode`, err)
+		return nil,err
+	}
+
+	return datumBytes.Bytes(), nil
+
+}
+
+
 
 // compare_datums()
 // Returns TRUE if the two datums match, otherwise FALSE.

@@ -5,8 +5,9 @@ import (
 	"math"
 	"reflect"
 	"strings"
-
 	"github.com/gonum/floats"
+	"bytes"
+	"encoding/gob"
 )
 
 // A Transformer takes input coordinates and returns output coordinates and an error.
@@ -50,6 +51,13 @@ type SR struct {
 	Czech                      bool
 }
 
+type DatumExport struct {
+	Datum_type    datumType
+	Datum_params  []float64
+	A, B, Es, Ep2 float64
+	NadGrids      string
+}
+
 // NewSR initializes a SR object and sets fields to default values.
 func NewSR() *SR {
 	p := new(SR)
@@ -73,6 +81,72 @@ func registerTrans(proj TransformerFunc, names ...string) {
 	for _, n := range names {
 		projections[strings.ToLower(n)] = proj
 	}
+}
+
+func DatumExposed ( sr *SR ) ( DatumExport) {
+
+	var exportDatum DatumExport
+
+	exportDatum.A = sr.datum.a
+	exportDatum.B = sr.datum.b
+	exportDatum.Datum_params = sr.datum.datum_params
+	exportDatum.Datum_type = sr.datum.datum_type
+	exportDatum.Ep2 = sr.datum.ep2
+	exportDatum.Es = sr.datum.es
+	exportDatum.NadGrids = sr.datum.nadGrids
+
+	return exportDatum
+}
+
+func RestoreDatumExposed ( sr *SR, newDatum DatumExport ) {
+
+	var localDatum datum
+
+
+	localDatum.a = newDatum.A
+	localDatum.b = newDatum.B
+	localDatum.datum_params = newDatum.Datum_params
+	localDatum.datum_type = newDatum.Datum_type
+	localDatum.ep2 = newDatum.Ep2
+	localDatum.es = newDatum.Es
+	localDatum.nadGrids = newDatum.NadGrids
+
+	sr.datum = &localDatum
+
+}
+
+func datumSerialized ( theDatum datum ) ( []byte, error) {
+
+
+	var exportDatum DatumExport
+
+	exportDatum.A = theDatum.a
+	exportDatum.B = theDatum.b
+	exportDatum.Datum_params = theDatum.datum_params
+	exportDatum.Datum_type = theDatum.datum_type
+	exportDatum.Ep2 = theDatum.ep2
+	exportDatum.Es = theDatum.es
+	exportDatum.NadGrids = theDatum.nadGrids
+
+
+	var datumBytes = bytes.Buffer{}
+	e := gob.NewEncoder(&datumBytes)
+	err := e.Encode( exportDatum )
+
+	if err != nil {
+		fmt.Println(`failed datumgob Encode`, err)
+		return nil,err
+	}
+
+	return datumBytes.Bytes(), nil
+
+}
+
+func GetEncodedDatum ( sr *SR) ([]byte, error) {
+
+
+	return datumSerialized( *sr.datum )
+
 }
 
 // Transformers returns forward and inverse transformation functions for
