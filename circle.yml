@@ -13,7 +13,12 @@ dependencies:
   pre:
     - go get -u github.com/ctessum/polyclip-go
     - go get -u github.com/gonum/graph
-
+    - go get -u github.com/gonum/floats
+    - go get -u github.com/gonum/blas
+    - go get -u github.com/gonum/internal
+    - go get -u github.com/gonum/ilapack
+    - go get -u github.com/gonum/matrix
+    - go get -u github.com/gonum/plot
   override:
     - rm -rf ${HOME}/.go_workspace/src/github.com/geodatalake/
     - mkdir -p ~/.go_workspace/src/github.com/geodatalake
