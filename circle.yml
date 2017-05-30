@@ -18,6 +18,8 @@ dependencies:
     - go get -u github.com/gonum/lapack
     - go get -u github.com/gonum/matrix
     - go get -u github.com/gonum/plot
+    - go get -u github.com/jonas-p/go-shp
+    - go get -u github.com/qedus/osmpbf
 
 
   override:
