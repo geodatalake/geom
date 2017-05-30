@@ -2,8 +2,8 @@ package op
 
 import (
 	"fmt"
-	"github.com/ctessum/geom"
-	"github.com/ctessum/geom/carto"
+	"github.com/geodatalake/geom"
+	"github.com/geodatalake/geom/carto"
 	"image/color"
 	"math"
 	"math/rand"

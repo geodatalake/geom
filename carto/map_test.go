@@ -1,7 +1,7 @@
 package carto
 
 import (
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 	"image/color"
 	"math/rand"
 	"os"

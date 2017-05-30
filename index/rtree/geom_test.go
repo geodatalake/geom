@@ -8,7 +8,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 const EPS = 0.000000001

@@ -20,7 +20,7 @@
 package op
 
 import (
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 	. "testing"
 )
 

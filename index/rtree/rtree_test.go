@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 func mustRect(p geom.Point, widths geom.Point) *geom.Bounds {

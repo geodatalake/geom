@@ -2,9 +2,9 @@ package geom
 
 import (
 	"math"
-
 	"github.com/ctessum/polyclip-go"
 )
+
 
 // MultiPolygon is a holder for multiple related polygons.
 type MultiPolygon []Polygon

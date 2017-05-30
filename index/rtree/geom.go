@@ -7,7 +7,7 @@ package rtree
 import (
 	"math"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 // DistError is an improper distance measurement.  It implements the error

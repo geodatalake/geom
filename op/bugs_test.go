@@ -5,7 +5,7 @@ import (
 	"sort"
 	. "testing"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 type sorter geom.Polygon
