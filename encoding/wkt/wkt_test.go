@@ -1,7 +1,7 @@
 package wkt
 
 import (
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 	"reflect"
 	"testing"
 )

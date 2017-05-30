@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 func TestCountTags(t *testing.T) {

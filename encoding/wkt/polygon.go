@@ -1,7 +1,7 @@
 package wkt
 
 import (
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 func appendPolygonWKT(dst []byte, polygon geom.Polygon) []byte {

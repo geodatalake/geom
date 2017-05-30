@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ctessum/geom"
-	"github.com/ctessum/geom/proj"
+	"github.com/geodatalake/geom"
+	"github.com/geodatalake/geom/proj"
 	"github.com/jonas-p/go-shp"
 )
 
