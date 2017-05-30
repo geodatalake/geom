@@ -12,6 +12,7 @@ machine:
 dependencies:
   pre:
     - go get -u github.com/ctessum/polyclip-go
+    - go get -u github.com/gonum/graphs
 
   override:
     - rm -rf ${HOME}/.go_workspace/src/github.com/geodatalake/
