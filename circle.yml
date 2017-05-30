@@ -18,6 +18,7 @@ dependencies:
     - go get -u github.com/gonum/lapack
     - go get -u github.com/gonum/matrix
 
+
   override:
     - rm -rf ${HOME}/.go_workspace/src/github.com/geodatalake/
     - mkdir -p ~/.go_workspace/src/github.com/geodatalake
