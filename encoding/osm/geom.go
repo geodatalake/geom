@@ -3,8 +3,8 @@ package osm
 import (
 	"fmt"
 
-	"github.com/ctessum/geom"
-	"github.com/ctessum/geom/op"
+	"github.com/geodatalake/geom"
+	"github.com/geodatalake/geom/op"
 	"github.com/qedus/osmpbf"
 )
 

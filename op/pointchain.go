@@ -24,7 +24,7 @@
 package op
 
 import (
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 // Represents a connected sequence of segments. The sequence can only be extended by connecting

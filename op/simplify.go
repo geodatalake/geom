@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 // Simplify simplifies a line, multiline, polygon, or multipolygon

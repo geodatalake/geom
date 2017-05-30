@@ -26,7 +26,7 @@ package op
 import (
 	"math"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 type outputType int

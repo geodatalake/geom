@@ -9,7 +9,7 @@ import (
 	"math"
 	"reflect"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 	"github.com/gonum/plot/vg"
 	"github.com/gonum/plot/vg/draw"
 	"github.com/gonum/plot/vg/vgimg"

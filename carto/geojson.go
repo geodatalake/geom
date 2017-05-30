@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/ctessum/geom"
-	"github.com/ctessum/geom/encoding/geojson"
+	"github.com/geodatalake/geom"
+	"github.com/geodatalake/geom/encoding/geojson"
 )
 
 type GeoJSONfeature struct {

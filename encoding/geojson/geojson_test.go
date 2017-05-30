@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 func TestGeoJSON(t *testing.T) {

@@ -3,7 +3,7 @@ package shp
 import (
 	"fmt"
 
-	"github.com/ctessum/geom"
+	"github.com/geodatalake/geom"
 )
 
 // This example shows how to read in information from a shapefile, write
